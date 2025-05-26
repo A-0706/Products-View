@@ -1,0 +1,249 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+  background-color: #dfdfdf;
+}
+
+.plp-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plp-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.plp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.plp-product-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.plp-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.plp-image-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.plp-product-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.plp-product-info {
+  padding: 15px;
+}
+
+.plp-product-title {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plp-product-price {
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0 0 5px;
+}
+
+.plp-product-category {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.plp-error-message {
+  color: #d32f2f;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.plp-error-button {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pdp-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pdp-back-button {
+  background: none;
+  border: none;
+  color: #254052;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: ease .3s all;
+}
+
+.pdp-back-button:hover {
+  background-color: #f0f0f0;
+}
+
+.pdp-detail-container {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdp-image-container {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  background: white;
+}
+
+.pdp-product-image {
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.pdp-info-container {
+  flex: 1;
+  padding: 30px;
+}
+
+.pdp-title {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.pdp-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 15px 0;
+}
+
+.pdp-category {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.pdp-description {
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.pdp-error-message {
+  color: #d32f2f;
+  padding: 40px;
+  text-align: center;
+}
+
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Adjust based on your needs */
+  gap: 15px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner-container p {
+  color: #666;
+  font-size: 1.1rem;
+}
+  
+
+@media (max-width: 1024px) {
+  .plp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .plp-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .pdp-detail-container {
+    flex-direction: column;
+  }
+  
+  .pdp-image-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plp-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plp-container, 
+  .pdp-container {
+    padding: 10px;
+  }
+  
+  .plp-image-container {
+    height: 150px;
+    padding: 10px;
+  }
+}
